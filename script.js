@@ -15,21 +15,27 @@
 
 const transactions = [
     {
-        id: 01,
+        id: 1,
         description: 'Luz',
         amount: -50000,
         date: '23/01/2021',
     },
     {
-        id: 01,
+        id: 1,
         description: 'Website',
         amount: 500000,
         date: '23/01/2021',
     },
     {
-        id: 01,
+        id: 1,
         description: 'Internet',
         amount: -20000,
+        date: '23/01/2021',
+    },
+    {
+        id: 4,
+        description: 'App',
+        amount: 200000,
         date: '23/01/2021',
     },
 ]
@@ -45,13 +51,12 @@ const Transaction = {
     total() {
         //entrada - saídas
     }
-
-
 }
 
 const DOM = { 
     transactionsContainer: document.querySelector('#data-table tbody'),
-    addTransaction(transaction, index) {
+
+    addTransaction(transaction, index){
         const tr = document.createElement('tr')
         tr.innerHTML = DOM.innerHTMLTransaction(transaction)
 
@@ -60,6 +65,8 @@ const DOM = {
     innerHTMLTransaction(transaction) {
         const CSSclass = transaction.amount > 0 ? "income" : "expense"
 
+        const amount = transaction.
+
         const html = `
         <td class="description">${transaction.description}</td>
         <td class="${CSSclass}">${transaction.amount}</td>
@@ -67,12 +74,13 @@ const DOM = {
         <td>
             <img src="./assets/minus.svg" alt="Remover trasação">
         </td>
-        `
+       `
 
-        return html
+       return html
     }
 }
 
+const Ultils
 
 transactions.forEach(function(transaction) {
     DOM.addTransaction(transaction)
